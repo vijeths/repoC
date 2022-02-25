@@ -12,16 +12,16 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-       - name: script
-         run: |
+      - name: script
+        run: |
               echo "Hello!! running 2nd workflow
               
-  - name: Repository Dispatch
+      - name: Repository Dispatch
         uses: peter-evans/repository-dispatch@v1
         with:
           token: ${{ secrets.GH_PAT }}
           repository: vijeths/repoB
-          event-type: my-event(triggered by repo A)
+          event-type: my-event(triggered by repo C)
           client-payload: '{"ref": "${{ github.ref }}", "sha": "${{ github.sha }}"}'
 
               
