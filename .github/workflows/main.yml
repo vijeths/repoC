@@ -14,7 +14,7 @@ jobs:
 
       - name: script
         run: |
-              echo "Hello!! running 2nd workflow
+              echo "Hello!! running 2nd workflow"
               
       - name: Repository Dispatch
         uses: peter-evans/repository-dispatch@v1
