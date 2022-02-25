@@ -19,7 +19,7 @@ jobs:
       - name: Repository Dispatch
         uses: peter-evans/repository-dispatch@v1
         with:
-          token: ${{ secrets.GH_PAT }}
+          token: ${{ secrets.GH_PATC }}
           repository: vijeths/repoB
           event-type: my-event(triggered by repo C)
           client-payload: '{"ref": "${{ github.ref }}", "sha": "${{ github.sha }}"}'
