@@ -1,0 +1,29 @@
+name: Check for push
+on:
+    workflow_dispatch:
+    push:
+        branches: [ main ]
+
+    
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+       - name: script
+         run: |
+              echo "Hello!! running 2nd workflow
+              
+  - name: Repository Dispatch
+        uses: peter-evans/repository-dispatch@v1
+        with:
+          token: ${{ secrets.GH_PAT }}
+          repository: vijeths/repoB
+          event-type: my-event(triggered by repo A)
+          client-payload: '{"ref": "${{ github.ref }}", "sha": "${{ github.sha }}"}'
+
+              
+          
+
